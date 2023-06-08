@@ -94,8 +94,13 @@ public class BusinessLogic {
             }
 
             int patronIndex = patronNumber - 1;
-            libraryManagementSystem.borrowedBooks[patronIndex] = libraryManagementSystem.books[bookIndex];
-            System.out.println("Book borrowed successfully!");
+            if(libraryManagementSystem.borrowedBooks[patronIndex]==null) {
+                libraryManagementSystem.borrowedBooks[patronIndex] = libraryManagementSystem.books[bookIndex];
+                System.out.println("Book borrowed successfully!");
+            }
+            else{
+                System.out.println("The Person already exceeded his limit");
+            }
         }
     }
 /* here borrowed books are store in borrowedBooks array here borrowed book is stored like if we select book number 2 it is stored in borrowedBook 1 index postion book number
